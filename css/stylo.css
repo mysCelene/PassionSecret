@@ -1,14 +1,4 @@
-/* Limita el tamaño del contenedor de cada foto en el carrusel */
-.carousel-inner {
-  width: 400px; /* Ajusta este valor al tamaño que desees */
-  height: 300px;
-  overflow: hidden; /* Oculta los bordes sobrantes si los hay */
-}
-
-/* Ajusta la imagen dentro de su contenedor */
-.carousel-inner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Recorta la imagen proporcionalmente para que encaje perfecto sin deformarse */
-  object-position: center; /* Centra el punto focal de la imagen */
+.logo {
+    with: 80px;
+    height: 80px;
 }
