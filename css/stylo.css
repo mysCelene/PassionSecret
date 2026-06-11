@@ -39,56 +39,75 @@
     display: block;
 }
 /*Imagenes debajo del carrusel*/
-/* --- DISEÑO GENERAL (Aplica para todos los dispositivos) --- */
+/* --- DISEÑO GENERAL --- */
 .galeria {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px; /* Reducimos ligeramente el espacio en móvil para ganar pantalla */
+    gap: 20px;
 }
 
 .titulo-galeria {
     width: 100%;
     text-align: center;
-    margin-top: 40px; /* Un poco menos de espacio en móvil */
-    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-bottom: 25px;
     font-size: 22px;
     font-weight: bold;
 }
 
-/* Control de las imágenes dentro de su contenedor */
-.galeria .imagenes img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+/* El contenedor ahora se alinea verticalmente para el texto de abajo */
+.galeria .imagenes {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra la imagen y el texto horizontalmente */
+    text-align: center;
 }
 
-/* --- VISTA PARA MÓVILES (Pantallas de menos de 768px de ancho) --- */
+/* Control estricto de la imagen */
+.galeria .imagenes img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px; /* Opcional: bordes ligeramente redondeados */
+}
+
+/* Estilo para el texto de cada prenda */
+.descripcion-prenda {
+    margin-top: 8px; /* Espacio entre la imagen y su texto */
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+}
+
+/* --- VISTA PARA MÓVILES (Pantallas de menos de 768px) --- */
 @media (max-width: 767px) {
     .galeria .imagenes {
-        /* Toma el 50% del ancho de la pantalla restando el espacio del gap */
-        flex: 0 0 calc(50% - 15px);
-        height: 200px; /* Reducimos la altura en móvil para que mantenga proporción */
+        flex: 0 0 100%; /* Ocupa una fila completa por elemento */
+        max-width: 280px; /* Limita el ancho en móvil para que no sea gigante */
+        height: auto;
+    }
+
+    .galeria .imagenes img {
+        height: 320px; /* Altura ideal controlada para el móvil */
     }
 }
 
 /* --- VISTA PARA COMPUTADORAS (Pantallas de 768px o más) --- */
 @media (min-width: 768px) {
     .titulo-galeria {
-        margin-top: 60px; /* Más espacio en pantallas grandes */
+        margin-top: 60px;
         font-size: 28px;
     }
 
-    .galeria {
-        gap: 20px; /* Más espacio entre imágenes en PC */
+    .galeria .imagenes {
+        flex: 0 0 calc(20% - 20px); /* 5 imágenes por fila en PC */
     }
 
-    .galeria .imagenes {
-        /* 20% del ancho para que quepan las 5 imágenes en una sola fila limpia */
-        flex: 0 0 calc(20% - 20px);
-        height: 250px;
+    .galeria .imagenes img {
+        height: 250px; /* Altura fija uniforme para la cuadrícula en PC */
     }
 }
+
 
 
