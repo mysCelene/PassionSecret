@@ -39,36 +39,56 @@
     display: block;
 }
 /*Imagenes debajo del carrusel*/
+/* --- DISEÑO GENERAL (Aplica para todos los dispositivos) --- */
 .galeria {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    /*margin-top: 60px;*/
+    gap: 15px; /* Reducimos ligeramente el espacio en móvil para ganar pantalla */
 }
 
-/* 1. Controla el contenedor de la imagen */
-.galeria .imagenes {
-    flex: 0 0 calc(20% - 20px); /* Ajusta el % según cuántas quieras por fila */
-    width: 200px;  /* Ancho fijo para todas */
-    height: 250px; /* Altura fija para todas */
+.titulo-galeria {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px; /* Un poco menos de espacio en móvil */
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: bold;
 }
 
-/* 2. Obliga a la imagen a rellenar el contenedor uniformemente */
+/* Control de las imágenes dentro de su contenedor */
 .galeria .imagenes img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Evita que la imagen se estire o se deforme */
-    object-position: center; /* Centra el recorte de la imagen */
+    object-fit: cover;
+    object-position: center;
 }
-/* Estilos para el nuevo texto */
-.titulo-galeria {
-    width: 100%; /* Fuerza a que ocupe toda la fila */
-    text-align: center; /* Centra el texto en la pantalla */
-    margin-top: 60px; /* Separa el texto del carrusel superior */
-    margin-bottom: 20px; /* Separa el texto de las imágenes de abajo */
-    font-size: 24px; /* Tamaño de la letra (ajústalo a tu gusto) */
-    font-weight: bold; /* Hace la letra negrita */
-    color: #333; /* Color del texto */
+
+/* --- VISTA PARA MÓVILES (Pantallas de menos de 768px de ancho) --- */
+@media (max-width: 767px) {
+    .galeria .imagenes {
+        /* Toma el 50% del ancho de la pantalla restando el espacio del gap */
+        flex: 0 0 calc(50% - 15px);
+        height: 200px; /* Reducimos la altura en móvil para que mantenga proporción */
+    }
 }
+
+/* --- VISTA PARA COMPUTADORAS (Pantallas de 768px o más) --- */
+@media (min-width: 768px) {
+    .titulo-galeria {
+        margin-top: 60px; /* Más espacio en pantallas grandes */
+        font-size: 28px;
+    }
+
+    .galeria {
+        gap: 20px; /* Más espacio entre imágenes en PC */
+    }
+
+    .galeria .imagenes {
+        /* 20% del ancho para que quepan las 5 imágenes en una sola fila limpia */
+        flex: 0 0 calc(20% - 20px);
+        height: 250px;
+    }
+}
+
 
