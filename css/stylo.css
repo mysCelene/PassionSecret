@@ -109,5 +109,107 @@
     }
 }
 
+/*FOOTER*/
+/* --- ESTILOS DEL FOOTER --- */
+.sitio-footer {
+    background-color: #1a1a1a; /* Fondo oscuro elegante */
+    color: #ffffff; /* Texto blanco */
+    padding: 40px 20px 10px 20px;
+    margin-top: 80px; /* Separación generosa con la galería de arriba */
+    font-family: sans-serif;
+}
+
+.container-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.columna-footer {
+    flex: 1 1 250px; /* Permite que las columnas se adapten al ancho disponible */
+}
+
+.columna-footer h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffc107; /* Color de acento (puedes cambiarlo por el de tu marca) */
+    font-weight: bold;
+}
+
+.columna-footer p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+/* Lista de enlaces */
+.columna-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.columna-footer ul li {
+    margin-bottom: 10px;
+}
+
+.columna-footer ul li a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.columna-footer ul li a:hover {
+    color: #ffffff; /* Brilla al pasar el cursor */
+}
+
+/* Enlaces de Redes Sociales */
+.redes-sociales {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.redes-sociales a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    color: #ffffff;
+}
+
+/* Barra inferior de Copyright */
+.copyright-footer {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #333333;
+    padding-top: 15px;
+}
+
+.copyright-footer p {
+    font-size: 12px;
+    color: #777777;
+    margin: 0;
+}
+
+/* --- ADAPTACIÓN MÓVIL --- */
+@media (max-width: 767px) {
+    .container-footer {
+        flex-direction: column; /* Se apilan verticalmente en celular */
+        text-align: center; /* Centra el texto para mejor lectura en pantallas chicas */
+    }
+
+    .redes-sociales {
+        align-items: center; /* Centra los botones de redes en móvil */
+    }
+}
+
 
 
